@@ -19,11 +19,11 @@ local A = Y.Button({
     Text = "Você não selecionou nenhuma opção",
     Callback = function()
         if Type == "Iniciar Dataloss" then
-                    local args = {
-                       [1] = "\0" .. string.rep("B", 4200000)
-                    }
+					local args = {
+    					[1] = "\0" .. string.rep("B", 4200000)
+					}
 
-                    game:GetService("ReplicatedStorage").Remote.SaveTeam:FireServer(unpack(args))
+					game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("SetTutorialDone"):FireServer(unpack(args))
             TextField:SetText("Iniciado")
         end
     end
